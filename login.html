@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Global Body Styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+           
+            background-color: #151717;
+        }
+
+        /* Form Container */
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #ffffff;
+            padding: 30px;
+            width: 75%;
+            height: 80%;
+            border-radius: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            overflow-y: auto;
+        }
+
+        /* Placeholder Styles */
+        ::placeholder {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Button Styles */
+        .form button {
+            align-self: flex-end;
+        }
+
+        /* Label Styles */
+        .flex-column > label {
+            color: #151717;
+            font-weight: 600;
+        }
+
+        /* Input Form Styles */
+        .inputForm {
+            border: 2.5px solid #ecedec;
+            border-radius: 10px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            transition: 0.2s ease-in-out;
+        }
+
+        /* Input Styles */
+        .input {
+            margin-left: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 85%;
+            height: 100%;
+        }
+
+        /* Focus Styles */
+        .input:focus {
+            outline: none;
+        }
+
+        .inputForm:focus-within {
+            border: 3px solid #1db954; /* Spotify Green on focus */
+        }
+
+        /* Flex Row Layout */
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        /* Label for Flex Row */
+        .flex-row > div > label {
+            font-size: 14px;
+            color: black;
+            font-weight: 400;
+        }
+
+        /* Span Styles */
+        .span {
+            font-size: 14px;
+            margin-left: 5px;
+            color: #2d79f3;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Submit Button Styles */
+        .button-submit {
+            margin: 20px 0 10px 0;
+            background-color: #1DB954 ;
+            border: none;
+            color: black;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 10px;
+            height: 50px;
+            width: 100%;
+            margin-top: 60px;
+            cursor: pointer;
+        }
+
+        .button-submit:hover {
+            background-color: #252727;
+        }
+
+        /* Paragraph Styles */
+        .p {
+            text-align: center;
+            color: black;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        /* Button Styles */
+        .btn {
+            margin-top: 10px;
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            gap: 10px;
+            border: 1px solid #ededef;
+            background-color: white;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            border: 1px solid #2d79f3;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .form {
+                width: 90%;
+                height: auto;
+                padding: 20px;
+            }
+
+            .inputForm {
+                height: 40px;
+                margin-bottom: 15px;
+            }
+
+            .input {
+                width: 100%;
+            }
+
+            .button-submit,
+            .btn {
+                height: 45px;
+                font-size: 16px;
+                font-weight:600;
+            }
+
+            .flex-row {
+                flex-direction: row;
+                gap: 5px;
+            }
+
+            .flex-row > div > label {
+                font-size: 13px;
+                margin-top: 5px;
+            }
+
+            .flex-row.forgot-remember {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .btn-signup {
+                margin-top: 40px;
+            }
+        }
+
+        /* Media Queries for PC */
+        @media (min-width: 769px) {
+            .form {
+                width: 50%;
+                height: 60%;
+                padding: 20px;
+                overflow-y: auto;
+            }
+            #img{
+            	height:40%;
+            	width:8.5%;
+            }
+
+            .inputForm {
+                height: 45px;
+            }
+
+            .button-submit,
+            .btn {
+                height: 45px;
+                font-size: 14px;
+            }
+
+            .flex-row {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .flex-row.forgot-remember {
+                margin-bottom: 10px;
+            }
+
+            .btn-signup {
+                margin-top: 200px;
+            }
+        }
+    </style>
+    <title>Login Page</title>
+</head>
+
+<body class="bg-white flex flex-col">
+    <section class="flex flex-col justify-center items-center h-[210px]  w-full">
+        <div id="img" class="w-[20%] h-[50%] bg-cover bg-center bg-[url('spot.svg')]"></div>
+        <div class="w-full p-8 bg-white bg-opacity-80 h-[60%]">
+            <h1 class="text-4xl text-center font-extrabold m-2 md:text-xl">Sign up to</h1>
+            <h1 class="text-4xl text-center font-extrabold"> Start Listeing</h1>
+        </div>
+    </section>
+    <form class="form bg-white">
+        <div class="flex-column">
+            <label>Email Adress</label>
+        </div>
+        <div class="inputForm">
+            <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                <g id="Layer_3" data-name="Layer 3">
+                    <path
+                        d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z">
+                    </path>
+                </g>
+            </svg>
+            <input type="text" class="input" placeholder="Enter your Email or Username">
+        </div>
+
+        <div class="flex-column color-white">
+            <label>Password</label>
+        </div>
+        <div class="inputForm">
+            <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm144 112c-26.453125 0-48-21.523438-48-48s21.546875-48 48-48 48 21.523438 48 48-21.546875 48-48 48zm0-64c-8.8125 0-16 7.167969-16 16s7.1875 16 16 16 16-7.167969 16-16-7.1875-16-16-16z">
+                </path>
+            </svg>
+            <input type="password" class="input" placeholder="Enter your Password">
+        </div>
+
+        <div class="flex-row">
+            <div>
+                <input type="checkbox">
+                <label class="text-[#1DB954] ">Remember me</label>
+            </div>
+            <span class="span text-[#1DB954]">Forgot password?</span>
+        </div>
+
+        <button class="button-submit" type="submit">Sign In</button>
+
+        <p class="p">Don't have an account? <span class="span">Sign Up</span></p>
+
+        <div class="flex-row">
+            <button class="btn" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
+                    <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"></path>
+                    <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"></path>
+                    <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"></path>
+                    <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C39.317 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"></path>
+                </svg>
+                Sign in with Google
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>

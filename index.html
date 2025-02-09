@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Spotify Embed</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black">
+  
+  <header class="relative  flex flex-col justify-center items-center h-600 w-screen">
+    <div class="absolute inset-1 bg-back bg-cover opacity-30"></div>
+    <nav class="flex flex-row h-[10%] justify-between w-[100%] z-10 ">
+      <div class="h-full w-[100%] flex flex-row justify-between gap-4 p-4 rounded-lg items-center">
+        <img class="h-10 w-[40%] md:w-[25%]" src="logo.png" alt="home">
+        <div class="w-[45%] h-14 flex flex-row justify-center gap-4 p-4 rounded-lg">
+        <button class="h-full w-2/5 rounded-2xl bg-white text-gray-900 text-[0.7rem] leading-5 text-center shadow-sm hover:bg-[#1DB954] focus:outline focus:outline-2 font-bold focus:bg-[#1DB954] focus-visible:shadow-none cursor-pointer select-none sign touch-manipulation">
+          Sign Up
+        </button>
+        <button class="h-full w-2/5 rounded-2xl bg-white text-gray-900 text-[0.8rem] font-Railway leading-5 text-center shadow-sm font-bold hover:bg[#1DB954] focus:bg-[#1DB954] focus-visible:shadow-none cursor-pointer select-none touch-manipulation">
+          Login
+        </button>
+      </div>
+      </div>
+    </nav>
+    <div class="flex flex-col justify-center h-[80%] w-[90%] z-10">
+      <div class="h-[25%] w-[100%] flex flex-row items-center justify-center">
+        <h1 class="text-white text-[6rem] font-poppins flex-shrink-0 font-[600]">SP</h1>
+        <img class="h-[90%] w-[18%] object-contain" src="l.png" alt="logo" />
+        <h1 class="text-white text-[6rem] font-Lora font-[600]">TIFY</h1>
+      </div>
+      <div class="h-[20%] w-[90%] flex flex-row justify-end items-center">
+        <h1 class="text-[#1DB954] flex-shrink-0 text-[6rem] gradient font-poppins font-[600]">EMBED</h1>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="mt-6">
+      <!-- Your content here -->
+    </div>
+  </main>
+
+  <!-- Fixed Bottom Section -->
+ <!-- Iframe Section (Top Half) -->
+<div id="bottom-section" class="fixed  bottom-[35px] left-0 h-[100px] w-full flex justify-center text-white transition-all duration-500 z-50 ">
+  <div id="ifr" class="relative h-full hidden w-[100%]">
+    <iframe 
+      id="bottomplayer" 
+      src="https://open.spotify.com/embed/album/2OSxFbzcssi0k0ZBU6XS7V" 
+      class="h-full  w-full transition-all duration-500" 
+      frameborder="0" 
+      allow="autoplay;encrypted-media"
+    ></iframe>
+    <!-- Preview Icon -->
+    <div id="preview" class="absolute top-2 right-8 bg-[url(preview.svg)] p-2 transform rotate-45 cursor-pointer" ></div>
+  </div>
+</div>
+
+<!-- Navigation Section (Bottom Half) -->
+<div id="nav" class="fixed z-40 inset-x-0 bottom-0 w-full bg-gradient-to-t from-black/100 to-black/0 text-white p-4 pb-[env(safe-area-inset-bottom)]">
+    <!-- Navigation Content -->
+
+  <nav  class="flex  h-full flex-row justify-around items-center ">
+    <div id="home"  class="nav-area  flex flex-col items-center">
+      <img src="house.svg" alt="Home" class="  mb-1" />
+      <p class="text-[0.3rem]">Home</p>
+    </div>
+    <div id="search" class="nav-area flex flex-col items-center">
+      <img src="search.svg" alt="Search" class="h-6 w-6 mb-1" />
+      <p class="text-xs">Search</p>
+    </div>
+    <div id="catogory" class=" flex flex-col items-center">
+      <img src="play.svg" alt="Play" class="h-8 mb-1" />
+      <p class="text-xs text-gray  text-center font-[700] ">Play</p>
+    </div>
+    <div id="aboutSec" class="nav-area flex flex-col items-center">
+      <img src="about.svg" alt="About" class="h-4 mb-1" />
+      <p class="text-xs">About</p>
+    </div>
+  </nav>
+</div>
+ <div id="fullPage" class=" z-20 fixed top-0 left-0 w-full h-full bg-black   hidden">
+ 	     <div class=" flex flex-col justify-between  h-30 mt-2 ml-4 mr-3  ">
+        <label for="searchInput" class="text-[2rem] font-black ml-1 text-white">Search</label>
+        <input id="searchInput" type="text" placeholder=" Listen to your favorite"
+            class=" p-3 font-bold text-[1rem]  mb-4 w-64  w-full  rounded focus:outline-none focus:ring-2 focus:ring-gray-300">
+    </div>
+    <main id="songs" class=" w-full overflow-y-auto h-full flex flex-col">
+    <!-- Your content here -->
+</main>
+    </div>
+      <div id="cat" class=" z-10 fixed top-0 overflow-y-auto left-0 w-full h-full bg-black hidden  ">
+     	
+     	<div id="cat2" class="z-10 fixed top-0 overflow-y-auto left-0 w-full h-full bg-black hidden">
+       </div>
+</div>
+ <main id="about" class=" w-full z-10 fixed top-0 overflow-y-auto h-full left-0 bg-black flex flex-col hidden ">
+ 	
+  
+  <div class="relative flex items-center ml-4">
+    <img src="bgAbout.png" alt="" class="h-46 w-full mr-4 opacity-70">
+    
+    <div class="absolute bottom-0 left-0 flex items-center opacity-100 ">
+        <img src="din.svg" alt="" class="h-8 w-8 mr-2">
+        <h1 class="text-white text-[1.7rem] font-[700]">Dinesh Rao</h1>
+    </div>
+</div>
+ 	<div class="bg-black text-white p-2 rounded-lg max-w-lg m-2">
+  <h1 class="text-[2.3rem]  font-black">Seamless streaming with my music player</h1>
+  <div class="flex items-center mt-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="#1DB954">
+      <path d="M10 2a6 6 0 00-6 6v4a6 6 0 006 6 6 6 0 006-6V8a6 6 0 00-6-6zm0 18a8 8 0 100-16 8 8 0 000 16z" />
+    </svg>
+    <span class="ml-2 text-sm font-[500]">Spotify Embed player</span>
+  </div>
+  <p class="text-sm mt-4 text-gray-300 font-[400]">
+   It is a music player that offers features like song search, different categories, and a user-friendly interface for seamless music exploration. Users can easily find and play their favorite tracks while enjoying an organized and smooth listening experience. This project was developed using Spotify's APIs, integrating its playback and data services to fetch songs, albums, and playlists. The music content used in this player is sourced from Spotify, and all rights to the songs remain with Spotify and their respective owners. For more projects like this
+    <a href="https://github.com/PidadhDinesh5095" class="underline text-blue-300">Click here</a>.
+  </p>
+  <button class="mt-4 w-[100%] bg-white text-black font-semibold h-12 font-[900] text-[1.1rem] rounded-full hover:bg-gray-200">
+    Get in Touch
+  </button>
+</div>
+    <!-- Your content here -->
+</main>
+  <script src="main.js"></script>
+  
+</body>
+</html>

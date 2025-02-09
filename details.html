@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+    *{
+    	padding: 0px;
+    	margin:0px;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        h1, h3, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="details-container"></div>
+
+    <script>
+        const detailsContainer = document.getElementById('details-container');
+
+        // Retrieve the item data from sessionStorage
+        const itemData = JSON.parse(sessionStorage.getItem('itemData'));
+
+        if (itemData) {
+            // Display the item's type
+            const typeHeading = document.createElement('h3');
+            typeHeading.innerText = `Type: ${itemData.type || 'Unknown'}`;
+            detailsContainer.appendChild(typeHeading);
+
+            // Display the item's name
+            const nameHeading = document.createElement('h1');
+            nameHeading.innerText = itemData.name || 'Unknown Name';
+            detailsContainer.appendChild(nameHeading);
+
+            // Create and append an iframe for media playback if available
+            if (itemData.external_urls && itemData.external_urls.spotify) {
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://open.spotify.com/embed/${itemData.type}/${itemData.id}`;
+                iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+                detailsContainer.appendChild(iframe);
+            } else {
+                const noPlayback = document.createElement('p');
+                noPlayback.innerText = 'Playback not available for this item.';
+                detailsContainer.appendChild(noPlayback);
+            }
+        } else {
+            detailsContainer.innerText = 'No data available.';
+        }
+    </script>
+</body>
+</html>

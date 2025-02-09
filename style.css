@@ -1,0 +1,274 @@
+*{
+	margin:0px;
+	
+	padding:0px;
+}
+body {
+ 
+ 
+font-family:'kanit';
+}
+.gradient{
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(to left, #1db954, #ffffff, #29d466, #24c95c, #1db954);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2s linear infinite;
+}
+
+@keyframes animate-gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+#main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between sections */
+    overflow-y: auto; /* Enables vertical scrolling if needed */
+    padding: 20px;
+}
+
+.url-section {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 10px; /* Space between items */
+    padding: 0px;
+    white-space: nowrap; /* Prevents wrapping of items */
+}
+
+.url-section::-webkit-scrollbar {
+    height: 0px; /* Height of the horizontal scrollbar */
+}
+
+.url-section::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+}
+
+.url-section::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color when hovering over the scrollbar */
+}
+
+.artist-card {
+    flex: 0 0 auto; /* Prevents the cards from shrinking */
+    width: 150px; /* Fixed width for each card */
+    white-space: normal; /* Allows text wrapping within the card */
+    overflow: hidden; /* Ensures no vertical overflow */
+}
+
+.artist-card img {
+    width: 100%;
+    max-height:150px;
+   
+    object-fit: cover;
+}
+
+.artist-card h3 {
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.2em;
+    min-height: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+.artist-card h7 {
+    font-weight: 500;
+    margin-top:7px;
+    font-size: 0.9rem;
+    
+    line-height: 0.9em;
+    min-height: 0.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+.circle-div {
+     /* Must be equal to width to create a perfect circle */
+    border-radius: 50%; /* Makes the div a circle */
+   /* Set a background color (optional) */
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* Centers any content inside the circle */
+    text-align: center;
+}
+.over{
+	min-height: 2.4em; /* Ensures space for at least two lines */
+    overflow: hidden; /* Hide overflow if the text is too long */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color:transparent;
+  padding: 10px;
+  color: white;
+}
+
+.nav-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-area img {
+  width: 25px; /* Set a consistent width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 5px;
+}
+
+.nav-area p {
+  margin: 0;
+  font-size: 0.7rem;
+  text-align:center;
+  color:gray;
+  font-weight:600;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  opacity: 100;
+  background: rgb(30, 215, 96);
+  box-shadow: rgba(30, 215, 96, 0.698) 0px 0px 0px 0px;
+  
+  border: 0;
+}
+
+.button:is(:hover, :focus) {
+  transform: scale(1.2);
+}
+
+
+
+/* Define the animation for the pause bars (no vertical movement, just height changes) */
+#bottom-section {
+    transition: all 0.3s ease;
+}
+
+#bottomplayer {
+    transition: all 0.3s ease;
+}
+
+
+
+.full-screen {
+    height: 100vh;
+    width: 100vw;
+}
+
+.full-screen iframe {
+    height: 80vh; /* Increase the iframe size */
+}
+/* Optional: Ensure smooth transition for height change */
+#bottom-section, #bottomplayer {
+  transition: height 0.5s ease;
+}
+.song-card {
+    display: flex;
+    align-items: center;
+    height : 60px;
+    margin:4px;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: black;
+}
+
+.song-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.song-card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.song-card p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+/* Change font size and color of the placeholder */
+input::placeholder {
+    font-size: 1.1rem;    /* Set the font size */
+    color: #6B3E26;     /* Set the color */
+    font-weight: 800;  /* Optional: make the text bold */
+}
+input::selection {
+    background-color: #1DB954; /* Green background for selected text */
+     /* Optional: Change text color to white */
+}
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.h-600{
+  height: 600px;
+}
+
+.w-screen {
+  width: 100vw;
+}
+.absolute {
+  position: absolute;
+}
+
+.inset-1 {
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.bg-back{
+  background-image: url('back.jpg');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
