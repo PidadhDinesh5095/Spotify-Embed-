@@ -7,8 +7,11 @@ Spotify Embed is a web-based music player that integrates Spotify's APIs, allowi
 🚀 Features
 
 ✅ Search & Play Music – Find and play any track, album, or playlist.
+
 ✅ Spotify API Integration – Uses Spotify Web API for fetching music data.
+
 ✅ Responsive UI – Works smoothly on different screen sizes.
+
 ✅ Embedded Player – Play music directly without leaving the app.
 
 🛠 Tech Stack
@@ -35,5 +38,6 @@ Pull requests are welcome! If you have suggestions, feel free to open an issue.
 📩 Contact
 
 📧 Email: Pidadhdinesh@gmail.com
+
 🔗 Linkedin :
 
