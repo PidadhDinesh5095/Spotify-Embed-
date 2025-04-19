@@ -2,7 +2,7 @@ const clientId = 'dfd48fc2bd6d4128b6d758f0743e0660';
 const clientSecret = '9b259cb20c2d4fc8b56aedd9ce4d5d2e';
 
 document.querySelector(".sign").addEventListener("click", function () {
-    window.location.href = "http://localhost:7700/login.html";
+    window.location.href = "login.html";
 });
 
 async function getAccessToken() {
